@@ -1,0 +1,1 @@
+SELECT AVG(score) as average_score FROM exam_scores;
