@@ -11,3 +11,11 @@ INSERT INTO exam_scores (student_id, subject, score, exam_month) VALUES
 (4, 'MongoDB', 75, '25-JUL-15'),
 (4, 'NoSQL', 40, '25-SEP-20'),
 (5, 'CI/CD', 82, '25-SEP-19');
+
+
+INSERT INTO exam_scores (student_id, subject, score, exam_month) VALUES
+(2, 'CS', 50, '25-APR-20'),
+(2, 'Bio', 45, '25-MAY-22'),
+(3, 'ASE', 50, '25-MAY-22'),
+(3, 'SSE', 65, '25-MAY-22'),
+(3, 'PSE', 95, '25-MAY-22');
