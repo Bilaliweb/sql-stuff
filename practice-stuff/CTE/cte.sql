@@ -37,3 +37,18 @@ SELECT s.student_id AS std_id,
     FROM cte_total_stats AS total_stats
     INNER JOIN students as s ON s.student_id = total_stats.student_id
     ORDER BY total_stats.total_score DESC;
+
+
+-- Another example from 'subQuery-stdnts-eligible.sql' and convert that to CTE
+-- To achieve the result, we have to create multiple CTE's
+
+-- 1st CTE
+WITH cte_stdnts_eligible_score AS ( 
+    SELECT student_id FROM exam_scores AS e WHERE e.score >= 85
+),
+-- 2nd CTE
+cte_stdnts_eligible_marks AS (
+    SELECT student_id FROM projects AS p WHERE p.marks >= 80
+)
+SELECT * FROM students AS s
+WHERE s.student_id IN (SELECT student_id FROM cte_stdnts_eligible_score) AND s.student_id IN (SELECT student_id FROM cte_stdnts_eligible_marks);
